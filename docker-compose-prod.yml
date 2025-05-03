@@ -1,0 +1,74 @@
+name: notebookLLM-prod
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+      args: 
+      - VITE_BACKEND_URL=${VITE_BACKEND_URL}
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - notebookLLM-network
+    environment:
+      - VITE_BACKEND_URL=${VITE_BACKEND_URL}
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod
+    volumes:
+      - media_volume:/app/media 
+      - uploaded_files_volume:/app/uploaded_files 
+      - logs_volume:/app/logs 
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - FRONTEND_ORIGINS=${FRONTEND_ORIGINS}
+      - BASE_URL=${BASE_URL}
+      - FLASK_ENV=${FLASK_ENV}
+    depends_on:
+      - mysql
+    restart: unless-stopped
+    networks:
+      - notebookLLM-network
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: unless-stopped
+    networks:
+      - notebookLLM-network
+    ports:
+      - "3307:3306"
+
+  nginx:
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile.nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+    networks:
+      - notebookLLM-network
+
+volumes:
+  mysql_data:
+  media_volume: 
+  uploaded_files_volume: 
+  logs_volume: 
+
+networks:
+  notebookLLM-network:
+    driver: bridge

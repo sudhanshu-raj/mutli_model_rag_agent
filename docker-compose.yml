@@ -1,0 +1,81 @@
+name : notebookLLM-dev
+
+services:
+  frontend:
+    networks:
+      - notebookLLM-network
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    volumes:
+      - ./frontend/src:/app/src
+    environment:
+      - VITE_BACKEND_URL=http://localhost/api
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+    restart: unless-stopped
+  
+  backend:
+    networks:
+      - notebookLLM-network
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    volumes:
+      - ./backend/src:/app/src  # This line creates the live link to your source code
+      - ./backend/media:/app/media
+      - ./backend/uploaded_files:/app/uploaded_files
+      - ./backend/logs:/app/logs
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=root
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=pdf_qa
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - FRONTEND_ORIGINS=http://localhost
+      - BASE_URL=http://backend:5000/
+      - FLASK_ENV=development  # Enables debug mode in Flask
+      - FLASK_DEBUG=1   
+    depends_on:
+      - mysql
+    restart: unless-stopped
+
+  mysql:
+    networks:
+      - notebookLLM-network
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=pdf_qa
+    ports:
+      - "3307:3307"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "443:443"
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - notebookLLM-network
+
+volumes:
+  mysql_data:
+
+networks:
+  notebookLLM-network:
+    driver: bridge

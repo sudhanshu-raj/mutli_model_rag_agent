@@ -1,0 +1,52 @@
+# Ignore media, uploaded files, and logs
+/media/
+/logs/
+/uploaded_files/
+
+
+# Bytecode files
+__pycache__/
+*.pyc
+**/src/__pycache__/
+
+# Environment files
+.env
+**/src/.env
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+virtualenv/
+
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+build
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
