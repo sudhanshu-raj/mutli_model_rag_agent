@@ -1,11 +1,11 @@
 # Ignore media, uploaded files, and logs
-/media/
-/logs/
-/uploaded_files/
+**/media/
+**/logs/
+**/uploaded_files/
 
 
 # Bytecode files
-__pycache__/
+**/__pycache__/
 *.pyc
 **/src/__pycache__/
 

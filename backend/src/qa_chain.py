@@ -46,7 +46,7 @@ class QAChain:
                 for img in images:
                     relative_path = os.path.relpath(os.path.abspath(img), start=media_output_dir).replace("\\", "/")
                     # now add the file url
-                    file_url=f"{base_url}fileAccess/outputfiles/{relative_path}"
+                    file_url=f"{base_url}/fileAccess/outputfiles/{relative_path}"
                     image_paths.append(file_url)
 
             text = context.get("text", "")

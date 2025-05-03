@@ -1,5 +1,4 @@
 const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL 
-console.log("VITE_BACKEND_URL", VITE_BACKEND_URL)
 export const API_BASE_URL = VITE_BACKEND_URL || "http://127.0.0.1:5000";
 
 export const ENDPOINTS = {

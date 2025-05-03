@@ -10,7 +10,6 @@ import { saveUserToLocalStorage } from "../../../utils/localstoragStuffs"
 
 const login = async (user) => {
   try {
-    console.log("hitting the login endpoint : ",ENDPOINTS.AUTH_LOGIN)
     const response = await axios.post(ENDPOINTS.AUTH_LOGIN, user)
     console.log(response.data)
     return {
