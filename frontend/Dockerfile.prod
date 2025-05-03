@@ -1,0 +1,42 @@
+# Stage 1: Build the application
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+
+ARG VITE_BACKEND_URL
+ENV VITE_BACKEND_URL=${VITE_BACKEND_URL}
+
+# Copy package files and install dependencies
+COPY package.json package-lock.json ./
+RUN npm ci
+
+# Copy the rest of the project files
+COPY . .
+
+# Debug: Check directory structure before build
+RUN ls -la
+
+# Build for production
+ENV NODE_ENV=production
+RUN npm run build || (echo "BUILD FAILED" && exit 1)
+
+# Debug: Check what directories were created by the build
+RUN ls -la
+RUN ls -la dist || echo "No dist directory found"
+RUN ls -la build || echo "No build directory found"
+
+# Stage 2: Serve with NGINX
+FROM nginx:1.25-alpine
+
+# Debug: Check nginx html directory before copying
+RUN ls -la /usr/share/nginx/html
+
+# Copy built files from builder stage
+# Try copying from dist directory
+COPY --from=builder /app/dist/ /usr/share/nginx/html/ 
+
+# Alternatively, try build directory if that's what your framework uses
+# COPY --from=builder /app/build /usr/share/nginx/html || echo "Failed to copy build"
+
+# Debug: Check if files were copied
+RUN ls -la /usr/share/nginx/html

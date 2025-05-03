@@ -1,0 +1,434 @@
+.builder406332cfa22246a8ad8c0f41622ad024:hover {
+    transform: scale(1.05);
+  }
+  .builderB6873ae0f1c64c83bdcdea018569518d:hover {
+    background: #ffffff14;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px #0003;
+  }
+  .builderD13254e4203a4026a254ffe35b2be588:focus {
+    border-color: #4facfe;
+    outline: none;
+  }
+  .builderCc33823a53dd4289a8c09488abdd860f:hover {
+    background: #ffffff0d;
+  }
+  .builder3931c0753f574c25b6ccac86dbf5cd12:hover {
+    opacity: 0.9;
+  }
+  .div {
+    color: #fff;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  .header {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    display: flex;
+  }
+
+  .h1 {
+    -webkit-text-fill-color: transparent;
+    background: white;
+    -webkit-background-clip: text;
+    font-size: 2.5rem;
+  }
+  .h1:hover {
+    background: linear-gradient(45deg, #7928ca, #ff0080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.headerButtons{
+  display: flex ;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+  .button {
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(45deg, #7928ca, #ff0080);
+    border: none;
+    border-radius: 8px;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    transition: transform 0.2s;
+    display: flex;
+    
+  }
+  .logoutButton{
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(45deg, #5d64cb,#b093cd);
+    border: none;
+    border-radius: 8px;
+    align-items: center;
+    padding: 0.8rem 0.8rem;
+    font-size: 1rem;
+    transition: transform 0.2s;
+    display: flex;
+  }
+  .logoutButton:hover{
+    opacity: 0.8;
+  }
+  .filesName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .topDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: self-start;
+
+  }
+  .deleteBtn{
+    outline: none;
+    border: none;
+    background: none;
+    color: #8893A6;
+    margin-top: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+    background-color: #ff0080;
+    color: white;
+    border: none;
+    padding:1px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .deleteBtn:hover{
+    opacity: 0.5;
+  }
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+  }
+  
+  .modalContent {
+    background: #1A1B2F;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    color: #fff;
+    max-width: 400px;
+    width: 90%;
+  }
+
+  .buttons {
+
+    display: flex;
+    justify-content: space-around;
+  }
+  
+
+  .buttons button {
+    background-color: #292F44;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .buttons button:hover {
+   opacity: 0.8;
+  }
+  .div2 {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    display: grid;
+  }
+
+  .div3 {
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    background-color: #ffffff0d;
+    border: 1px solid #ffffff1a;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+  .h2 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  .div4 {
+    color: #8f9aaf;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+  .div5 {
+    z-index: 1000;
+    background-color: #000c;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    inset: 0;
+  }
+  .error{
+    color: #d93d3d;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  
+  }
+  .div6 {
+    background-color: #1a1a2e;
+    border: 1px solid #ffffff1a;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
+  }
+
+  .h3 {
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+  }
+  .input {
+    color: #fff;
+    background-color: #ffffff0d;
+    border: 1px solid #ffffff1a;
+    border-radius: 6px;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+  }
+  .div7 {
+    justify-content: flex-end;
+    gap: 1rem;
+    display: flex;
+  }
+  .button2 {
+    color: #fff;
+    cursor: pointer;
+    background: 0 0;
+    border: 1px solid #fff3;
+    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+  }
+  .button3 {
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(45deg, #7928ca, #ff0080);
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+  }
+  .loadingContainer, .errorContainer, .emptyStateContainer {
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin: 1rem 0;
+  }
+  
+  .errorMessage {
+    color: #e53e3e;
+    margin-bottom: 0.5rem;
+  }
+  
+  .usingCached {
+    color: #a0aec0;
+    font-size: 0.9rem;
+  }
+  
+  .workspaceCardWrapper {
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .workspaceCardWrapper:hover {
+    transform: translateY(-3px);
+  }
+
+  /* Delete Modal - Unique class names with dltmdl prefix */
+
+/* Modal Overlay */
+.dltmdlModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+/* Modal Content */
+.dltmdlModalContent {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Buttons */
+.dltmdlButtons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.dltmdlCancelBtn, .dltmdlDeleteBtn, .dltmdlOkBtn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.dltmdlCancelBtn {
+  background-color: #333;
+  color: white;
+}
+
+.dltmdlDeleteBtn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.dltmdlOkBtn {
+  background-color: #333;
+  color: white;
+  padding: 8px 24px;
+}
+
+.dltmdlCancelBtn:hover, .dltmdlOkBtn:hover {
+  background-color: #444;
+}
+
+.dltmdlDeleteBtn:hover {
+  background-color: #c82333;
+}
+
+.dltmdlCancelBtn:disabled, .dltmdlDeleteBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loader */
+.dltmdlLoaderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.dltmdlLoader {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 40px;
+  height: 40px;
+  animation: dltmdlSpin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes dltmdlSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Success State */
+.dltmdlSuccessContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.dltmdlSuccessIcon {
+  margin-bottom: 16px;
+  animation: dltmdlScaleIn 0.5s ease;
+}
+
+/* Error State */
+.dltmdlErrorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.dltmdlErrorIcon {
+  margin-bottom: 16px;
+  animation: dltmdlShake 0.5s ease;
+}
+
+.dltmdlErrorMessage {
+  color: #f44336;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+@keyframes dltmdlScaleIn {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes dltmdlShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+  @media (width<=640px) {
+    .div2 {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (width<=640px) {
+    .div {
+      padding: 1rem;
+    }
+    .header{
+        flex-direction: column;
+        align-items: baseline;
+    }
+    .button{
+        height: 50px;
+    width: 100%;
+    justify-content: center;
+    }
+  }
+  @media (width<=640px) {
+    .h1 {
+      font-size: 1.8rem;
+    }
+    .headerButtons{
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
