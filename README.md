@@ -70,6 +70,12 @@ Users can organize documents into workspaces, chat with their content, and recei
 
   ![image_Search](https://github.com/user-attachments/assets/45d97928-c8d6-433b-a1d2-f2eb16bd5033)
 
+## Secureity Section:
+* Well although this is only for my one person agent , but still need a security so added a simple admin login .
+* Without login others if they found your domain can't see your stuffs.
+
+![security](https://github.com/user-attachments/assets/b5b7333b-945c-41ad-a13a-5eb104d8adb5)
+  
 
 ## Architecture Overview
 
